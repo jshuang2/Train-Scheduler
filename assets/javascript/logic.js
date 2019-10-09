@@ -1,3 +1,4 @@
+//1. Configure firebase with our application
 var config = {
     apiKey: "AIzaSyBuFN_iZX5YoJR2WpMTVGU56g5YPW8MScs",
     authDomain: "train-scheduler-dfc7b.firebaseapp.com",
@@ -11,3 +12,28 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+
+//2. Button for adding trains
+//3. Grab user input
+$("#add-train-btn").on("click", function(event){
+    event.preventDefault();
+
+    var trainName = $("#train-name-input").val().trim();
+    var destinationName = $("#destination-name-input").val().trim();
+    var firstTrain = $("first-train-input").val().trim();
+    var frequency = $("frequency-input").val().trim();
+});
+
+//4. Create variable object to hold train data
+    var newTrainForm = {
+        trainName: trainName,
+        destinationName: destinationName,
+        firstTrain: firstTrain,
+        frequency: frequency
+    };
+
+//5. Upload train data to the database
+
+//6. Clear text boxes
+
+//7. 
