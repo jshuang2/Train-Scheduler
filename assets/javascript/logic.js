@@ -19,20 +19,26 @@ $("#add-train-btn").on("click", function(event){
     event.preventDefault();
 
     var trainName = $("#train-name-input").val().trim();
-    var destinationName = $("#destination-name-input").val().trim();
-    var firstTrain = $("first-train-input").val().trim();
-    var frequency = $("frequency-input").val().trim();
-});
+    var destinationName = $("#destination-input").val().trim();
+    var firstTrain = $("#first-train-input").val().trim();
+    var frequency = $("#frequency-input").val().trim();
 
 //4. Create variable object to hold train data
     var newTrainForm = {
-        trainName: trainName,
-        destinationName: destinationName,
+        train: trainName,
+        destination: destinationName,
         firstTrain: firstTrain,
         frequency: frequency
     };
 
+
 //5. Upload train data to the database
+    database.ref().push(newTrainForm);
+    console.log(newTrainForm.train);
+    console.log(newTrainForm.destination);
+    console.log(newTrainForm.firstTrain);
+    console.log(newTrainForm.frequency);
+});
 
 //6. Clear text boxes
 
