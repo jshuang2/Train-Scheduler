@@ -87,6 +87,16 @@ database.ref().on("child_added", function(childSnapshot) {
     console.log("ARRIVAL TIME: " + moment(nextTrain).format("HH:mm"));
 
 
+    var newRow = $("<tr>").append(
+        $("<td>").text(trainName),
+        $("<td>").text(destinationName),
+        $("<td>").text(frequency + " mins"),
+        $("<td>").text(moment(nextTrain.format("HH:mm"))),
+        $("<td>").text(minutesTillTrain)
+    );
+    
+    // Append the new row to the table
+    $("#train-schedule > tbody").append(newRow);
 
 
 
