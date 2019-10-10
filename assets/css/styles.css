@@ -8,6 +8,10 @@
     margin-top: 10px;
 }
 
-.footer {
+.footerText {
     margin: 0 auto;
+}
+
+#trainForm {
+    margin-bottom: 150px;
 }
