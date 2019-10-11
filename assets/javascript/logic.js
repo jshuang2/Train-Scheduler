@@ -1,4 +1,4 @@
-// 1. Configure firebase with our application
+// 1. Configure firebase with my application
 var config = {
     apiKey: "AIzaSyBuFN_iZX5YoJR2WpMTVGU56g5YPW8MScs",
     authDomain: "train-scheduler-dfc7b.firebaseapp.com",
@@ -91,7 +91,7 @@ database.ref().on("child_added", function(childSnapshot) {
         $("<td>").text(trainName),
         $("<td>").text(destinationName),
         $("<td>").text(frequency + " mins"),
-        $("<td>").text(moment(nextTrain.format("HH:mm"))),
+        $("<td>").text(moment(nextTrain).format("HH:mm")),
         $("<td>").text(minutesTillTrain)
     );
     
@@ -100,4 +100,4 @@ database.ref().on("child_added", function(childSnapshot) {
 
 
 
-})
+});
